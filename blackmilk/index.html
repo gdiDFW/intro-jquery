@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Gallery Example with Lightbox</title>
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/modernizr-2.6.2.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox.css?v=2.1.4" media="screen" />
+
+        <style>
+        .gallery .full img:hover {
+            cursor: pointer;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="gallery">
+                <div class="previews">
+                    <a href="#" class="selected" data-full="http://cdn.shopify.com/s/files/1/0115/5832/products/ButterflyBlackTop_01_1024x1024.jpg?4231"><img src="http://cdn.shopify.com/s/files/1/0115/5832/products/ButterflyBlackTop_01_small.jpg?4226" /></a>
+                    <a href="#" data-full="http://cdn.shopify.com/s/files/1/0115/5832/products/ButterflyBlackTop_03_1024x1024.jpg?4231"><img src="http://cdn.shopify.com/s/files/1/0115/5832/products/ButterflyBlackTop_03_small.jpg?4226" /></a>
+                    <a href="#" data-full="http://cdn.shopify.com/s/files/1/0115/5832/products/ButterflyBlackTop_02_1024x1024.jpg?4231"><img src="http://cdn.shopify.com/s/files/1/0115/5832/products/ButterflyBlackTop_02_small.jpg?4226" /></a>
+                    <a href="#" data-full="http://cdn.shopify.com/s/files/1/0115/5832/products/ButterflyBlackTop_06_1024x1024.jpg?4231"><img src="http://cdn.shopify.com/s/files/1/0115/5832/products/ButterflyBlackTop_06_small.jpg?4226" /></a>
+                    <a href="#" data-full="http://cdn.shopify.com/s/files/1/0115/5832/products/ButterflyBlackTop_05_1024x1024.jpg?4231"><img src="http://cdn.shopify.com/s/files/1/0115/5832/products/ButterflyBlackTop_05_small.jpg?4226" /></a>
+                </div>
+                <div class="full">
+                    <!-- first image is viewable to start -->
+                    <img src="http://cdn.shopify.com/s/files/1/0115/5832/products/ButterflyBlackTop_01_1024x1024.jpg?4231" />
+                </div>
+                <div class="desc">
+                    <h2>BUTTERFLY BLACK TOP</h2>
+
+                    <p class="status">Out of Stock - Sewing More :)</p>
+
+                    <p>Now there are a couple of ways to wear this one, but my personal favourite is if you let the sleeves sit on top of your arms, so you get the winged effect :)</p>
+
+                    <p>Composition: 85% Nylon, 15% Elastane 
+                    Washing: Please hand wash cool.
+                    Designer: James Lillis
+                    Made in: Australia</p>
+
+                    <form>
+                        <div>
+                            <label><input value="XS" name="size" type="radio">
+                            XS</label>
+                        </div>
+                        <div>
+                            <label><input value="S" name="size" type="radio">
+                            S</label>
+                        </div>
+                        <div>
+                            <label><input value="M" name="size" type="radio">
+                            M</label>
+                        </div>
+                        <div>
+                            <label><input value="L" name="size" type="radio">
+                            L</label>
+                        </div>
+                        <input type="submit">
+                        <a class="blkbtn" href="#social_photos">View styling options</a>
+                    </form>
+
+                    <p class="msg">Please select a size option before moving on...</p>
+                </div>
+            </div>
+
+            <div class="instagram" id="social_photos">
+            </div>
+        </div>
+        
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script src="fancybox/jquery.fancybox.js?v=2.1.4"></script>
+        <script src="js/init.js"></script>
+    </body>
+</html>
