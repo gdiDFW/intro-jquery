@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>JavaScript, DOM, jQuery & APIs</title>
+
+		<meta name="description" content="Time to learn n' stuff!">
+		<meta name="author" content="Ricky Miller">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section class="home">
+					<h1>
+						<span class='js'>JavaScript,</span> <br />
+						<span class='dom'>DOM,</span>
+						<span class='jquery'>jQuery,</span>
+						<span class='api'>& APIs</span>
+					</h1>
+					<p>
+						By this guy → <a target='blank' href='http://rmill.ca'>Ricky Miller</a><br />
+						Spam me → <a href='mailto:ricky.miller@gmail.com'>ricky.miller@gmail.com</a><br />
+						Useless drivel → <a target='blank' href='http://twitter.com/rmill'>@rmill</a><br />
+						Silly projects → <a target='blank' href='http://github.com/rmillr'>rmillr</a>
+					</p>
+				</section>
+				<section class="js">
+					<section>
+						<h2>What is JavaScript?</h2>
+						<p>
+							"JavaScript (JS) is an interpreted computer programming language. It was originally implemented as part of web browsers so that client-side scripts could interact with the user, control the browser, and alter the document content that was displayed."
+						</p>
+						<aside class="notes">
+							Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+						</aside>
+					</section>
+					<section>
+						<h2>console.log('wat?');</h2>
+						<h4>Before we get started</h4>
+						<ul>
+							<li>What are the Chrome Dev Tools?</li>
+							<li>What is a console?</li>
+							<li>How can these things help me debug my JavaScripts™?</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Language Structure & Types</h2>
+						<ul>
+							<li>Variables (Declaration & Assigment)</li>
+							<li>Strings, Numbers & Booleans</li>
+							<li>Arrays</li>
+							<li>Objects</li>
+							<li>Flow Control/Looping</li>
+							<li>Functions</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Variables</h2>
+						<img src='http://i.imgur.com/vGHtZVO.jpg' />
+					</section>
+					<section>
+						<h2>Variables</h2>
+						<h4>(Maru)</h4>
+						<pre><code>
+// Declaring a maru
+var maru;
+
+// Assigning maru a value
+maru = 'Beyonce';
+						</code></pre>
+					</section>
+					<section>
+						<h2>Variables</h2>
+						<h4>(Strings, Numbers & Booleans)</h4>
+						<pre><code>
+// Declaring a variable
+var animal;
+
+// Assigning a value
+animal = 'Cat';
+
+// Declaring and assigning!
+var cats_are_cool = false;
+var number = 5;
+						</code></pre>
+					</section>
+					<section>
+						<h2>Arrays</h2>
+						<img src='http://i.imgur.com/oakSmE5.jpg' />
+					</section>
+					<section>
+						<h2>Arrays</h2>
+						<pre><code>
+var animals = [];
+animals[0] = 'Cat';
+animals[1] = 'Dog';
+
+// This is the same as above
+var animals = [ 'Cat', 'Dog' ];
+						</pre></code>
+					</section>
+					<section>
+						<h2>Objects</h2>
+						<pre><code>
+var animals = {
+  'cat' : 'meows',
+  'dog' : 'barks',
+  'owl' : 'hoots',
+  'parrot' : [ 'meows', 'barks', 'hoots' ]
+}
+
+animal.dog; // Outputs: `barks`
+						</code></pre>
+					</section>
+					<section>
+						<h2>Flow Control</h2>
+						<h4>if, else if, else</h4>
+						<pre><code>
+var cat = 'super cute';
+
+if ( cat === 'ugly' ) {
+  console.log( 'cat is ugly' );
+} else if ( cat === 'cute' ) {
+  console.log( 'cat is cute' );
+} else {
+  console.log( 'cat is ' + cat );
+}
+						</code></pre>
+					</section>
+					<section>
+						<h2>Loops</h2>
+						<img src='http://i.imgur.com/rAdLgwD.jpg' />
+					</section>
+					<section>
+						<h2>Loops</h2>
+						<pre><code>
+var animals = [ 'Cat', 'Dog', 'Owl' ];
+
+// Loop over array using conventional for loop
+for( var i = 0; i < animals.length; i++ ) {
+  if( animals[ i ] === 'Dog' ) {
+    console.log( 'Who let the dog in here?' );
+  }
+}
+
+// Loop over array using forEach
+animals.forEach( function( e ) {
+  if( e == 'Dog' ) {
+    console.log( 'Who let the dog in here?' );
+  }
+});
+						</code></pre>
+					</section>
+					<section>
+						<h2>Functions</h2>
+						<img src='http://i.imgur.com/atd3iBs.jpg' />
+					</section>
+					<section>
+						<h2>Functions</h2>
+						<pre><code>
+function makeASandWich() {
+  var ingredients = [ 'bacon', 'lettuce', 'tomato' ];
+  var bread = 'pumpernickel';
+	
+  return ingredients.join(', ') + ' on ' + bread + '… yum!';
+}
+
+// Calling a function
+makeASandWich();
+// Outputs: `bacon, lettuce, tomato on pumpernickel… yum!`
+						</code></pre>
+					</section>
+					<section>
+						<h2>Functions</h2>
+						<h4>Allows you to group portions of code</h4>
+						<pre><code>
+function sayMyName( name ) {
+  alert( name ); 
+}
+
+// Calling a function
+sayMyName( 'Ricky' ); // Outputs: `Ricky`
+						</code></pre>
+					</section>
+					<section>
+						<h2>Functions</h2>
+						<pre><code>
+var animals = [ 'Cat', 'Dog', 'Owl' ];
+
+function isThereADogInHere() {
+  // Loop over array
+  for( var i = 0; i < animals.length; i++ ) {
+    if( animals[ i ] === 'Dog' ) {
+      return true;
+    }
+  }
+}
+
+isThereADogInHere(); // Outputs: `true`
+						</code></pre>
+					</section>
+				</section>
+				<section class="dom">
+						<section>
+						<h2>What is the DOM?</h2>
+						<h4>Document Object Model</h4>
+						<p>
+						"The Document Object Model is an API for HTML documents. It provides a structural representation of the document, enabling the developer to modify its content and visual presentation. Essentially, it connects web pages to scripts or programming languages."
+						</p>
+					</section>
+					<section>
+						<h2>Some Examples…</h2>
+					</section>
+					<section>
+						<h2>Get a reference to an element object</h2>
+						<pre><code>
+// Get element(s) by className
+var logo = document.getElementsByClassName( 'logo' );
+
+// Get element(s) by tagName
+var divs = document.getElementsByTagName( 'div' );
+
+// Get element by ID
+var container = document.getElementById( 'container' );
+
+// Query Selector[All]
+var matches = document.querySelectorAll( 'h2.logo, #container' );
+						</code></pre>
+					</section>
+					<section>
+						<h2>Event Binding</h2>
+						<pre><code>
+// Get a reference to the `.logo` element object
+var logo = document.querySelector( '.logo' );
+
+// Bind a `click` event to the logo
+logo.addEventListener( 'click', function( event ) {
+  event.preventDefault(); // prevent element's default action
+  console.log( 'you clicked me!' );
+});
+						</code></pre>
+					</section>
+					<section>
+						<h2>Not all DOM implementations are created equal</h2>
+					</section>
+					<section>
+						<h2>Silly IE8 is silly</h2>
+						<p>
+						"In Internet Explorer versions prior to IE 9, you have to use `attachEvent` rather than the standard `addEventListener`. To support IE…"
+						</p>
+						<pre><code>
+if ( el.addEventListener ) {
+  el.addEventListener( 'click', function() { … } ); 
+} else if ( el.attachEvent )  {
+  el.attachEvent( 'onclick', function() { … } );
+}
+						</code></pre>
+					</section>
+					<section>
+						<h2>Enter jQuery…</h2>
+					</section>
+				</section>
+				<section class="jquery">
+					<section>
+					<h2>What is jQuery?</h2>
+						<p>
+						"jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript."
+						</p>
+					</section>
+					<section>
+						<h2>Some Examples…</h2>
+					</section>
+					<section>
+						<h2>Get a reference to an element object</h2>
+						<pre><code>
+// Get element(s) by className
+var logo = $( '.logo' );
+
+// Get element(s) by tagName
+var divs = $( 'div' );
+
+// Get element by ID
+var container = $( '#container' );
+
+// Get multiple items
+var matches = $( 'h2.logo, #container' );
+						</code></pre>
+					</section>
+					<section>
+						<h2>Event Binding</h2>
+						<pre><code>
+// Get a reference to the `.logo` element object
+var logo = $( '.logo' );
+
+// Bind a `click` event to the logo
+logo.click( function( event ) {
+  event.preventDefault(); // prevent element's default action
+  console.log( 'you clicked me!' );
+});
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Looping</h2>
+						<pre><code>
+var animals = [ 'Cat', 'Dog', 'Owl' ];
+
+$.each( animals, function( index, value ) {
+  console.log( index + ': ' + value );
+});
+
+/* This produces three messages:
+0 : Cat
+1 : Dog
+2 : Owl */
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>To the API!</h2>
+						<a href='http://api.jquery.com' target='_blank'>api.jquery.com</a>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>What's an API?</h2>
+						<p>
+						An application programming interface (API) is a protocol intended to be used as an interface by software components to communicate with each other.
+						</p>
+					</section>
+					<section>
+						<h2>List of services with public APIs</h2>
+						<ul>
+							<li>Twitter</li>
+							<li>Instagram</li>
+							<li>Flickr</li>
+							<li>Google (everything)</li>
+							<li>Facebook</li>
+						</ul>
+					</section>
+					<section>
+						<h2>What is JSON?</h2>
+						<p>
+						JavaScript Object Notation, is a text-based open standard designed for human-readable data interchange. It is derived from the JavaScript scripting language for representing simple data structures and associative arrays, called objects. Despite its relationship to JavaScript, it is language-independent, with parsers available for many languages.
+						</p>
+					</section>
+					<section>
+						<h2>Example JSON data</h2>
+						<p>
+						<pre><code>
+{
+  "created_time": "1362432448",
+  "text": "And a few more #hashtags ;)",
+  "from": {
+    "username": "thatsmybuddy",
+    "profile_picture": "http://images.ak.instagram.com/profiles/profile_789154_75sq_1365547026.jpg",
+    "id": "789154",
+    "full_name": "Anthony Vazquez"
+  },
+  "id": "404435148711485707"
+}
+						</code></pre>
+						</p>
+					</section>
+					<section>
+						<h2>Working with JSON data in jQuery</h2>
+						<pre><code>
+$.getJSON( 'recent.json', function( data ) {
+  // do stuff with `data`
+});
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<h2>Resources</h2>
+						<ul>
+							<li>
+								<a href='http://developer.mozilla.org/en-US/' target='_blank'>MDN</a>
+							</li>
+							<li>
+								<a href='http://jquery.com/' target='_blank'>jQuery</a>
+							</li>
+							<li>
+								<a href='http://api.jquery.com/' target='_blank'>jQuery API docs</a>
+							</li>
+							<li>
+								<a href='http://rmill.ca/gdi-js/files.zip'>Download files!</a>
+							</li>
+						</ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+	</body>
+</html>
